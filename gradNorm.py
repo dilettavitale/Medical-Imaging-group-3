@@ -94,7 +94,7 @@ class gradNorm:
             weights.append(self.model.weights.data.numpy())
             grad_norm_losses.append(grad_norm_loss.data.numpy())
 
-        if i % 100 == 0:   #QUA HO CANCELLATO UN CICLO
+        if i % 100 == 0:  
             if torch.cuda.is_available():
                 print('{}/{}: loss_ratio={}, weights={}, task_loss={}, grad_norm_loss={}'.format(
                                     i, args.n_iter, loss_ratio[-1], self.model.weights.data.cpu().numpy(), loss.data.cpu().numpy(), grad_norm_loss.data.cpu().numpy()))
